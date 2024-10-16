@@ -12,32 +12,45 @@
             justify-content: center;
             height: 100vh;
         }
-        #directions {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+        #leftDirections, #rightDirections {
             font-size: 1.5rem;
             margin: 20px;
             white-space: pre-line;
+            width: 45%; /* 각각의 폭을 설정 */
         }
     </style>
 </head>
 <body>
-    <div id="directions">방향이 여기에 표시됩니다.</div>
+    <div class="container">
+        <div id="leftDirections">왼쪽 방향이 여기에 표시됩니다.</div>
+        <div id="rightDirections">오른쪽 방향이 여기에 표시됩니다.</div>
+    </div>
     <button id="randomButton">랜덤 방향</button>
 
     <script>
         const directions = ['좌', '우'];
-        const directionsDisplay = document.getElementById('directions');
+        const leftDirectionsDisplay = document.getElementById('leftDirections');
+        const rightDirectionsDisplay = document.getElementById('rightDirections');
         const button = document.getElementById('randomButton');
 
         button.addEventListener('click', () => {
-            let results = '';
+            let leftResults = '';
+            let rightResults = '';
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
-                results += `${randomDirection} ~차 시기\n`; // 문자 추가
-                if ((i + 1) % 10 === 0) {
-                    results += '\n'; // 10개마다 줄 바꿈 추가
+                if (i < 10) {
+                    leftResults += `${randomDirection} ~차 시기\n`; // 왼쪽
+                } else {
+                    rightResults += `${randomDirection} ~차 시기\n`; // 오른쪽
                 }
             }
-            directionsDisplay.textContent = results.trim(); // 마지막 줄 바꿈 제거
+            leftDirectionsDisplay.textContent = leftResults.trim(); // 왼쪽 결과
+            rightDirectionsDisplay.textContent = rightResults.trim(); // 오른쪽 결과
         });
     </script>
 </body>
