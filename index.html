@@ -23,6 +23,14 @@
             white-space: pre-line;
             width: 45%; /* 각각의 폭을 설정 */
         }
+        #randomButton{
+            padding: 20px 40px;
+            font-size:1.5rem;
+            cursor:pointer;
+            border:none;
+            border-radius:5px;
+            background-color:#4CAF50;
+            color: white;
     </style>
 </head>
 <body>
@@ -44,9 +52,9 @@
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
                 if (i < 10) {
-                    leftResults += `${i}차: ${randomDirection}\n`; // 왼쪽
+                    leftResults += `${i}차: ${randomDirection}베기\n`; // 왼쪽
                 } else {
-                    rightResults += `${i}차: ${randomDirection}\n`; // 오른쪽
+                    rightResults += `${i}차: ${randomDirectio}베기\n`; // 오른쪽
                 }
             }
             leftDirectionsDisplay.textContent = leftResults.trim(); // 왼쪽 결과
