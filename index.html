@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 방향</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #direction {
+            font-size: 2rem;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="direction">방향이 여기에 표시됩니다.</div>
+    <button id="randomButton">랜덤 방향</button>
+
+    <script>
+        const directions = ['좌', '우'];
+        const directionDisplay = document.getElementById('direction');
+        const button = document.getElementById('randomButton');
+
+        button.addEventListener('click', () => {
+            const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+            directionDisplay.textContent = randomDirection;
+        });
+    </script>
+</body>
+</html>
