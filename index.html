@@ -52,9 +52,9 @@
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
                 if (i < 10) {
-                    leftResults += `${i}차: ${randomDirection}베기\n`; // 왼쪽
+                    leftResults += `${i+1}차: ${randomDirection}베기\n`; // 왼쪽
                 } else {
-                    rightResults += `${i}차: ${randomDirectio}베기\n`; // 오른쪽
+                    rightResults += `${i+1}차: ${randomDirectio}베기\n`; // 오른쪽
                 }
             }
             leftDirectionsDisplay.textContent = leftResults.trim(); // 왼쪽 결과
