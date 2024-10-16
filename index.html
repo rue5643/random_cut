@@ -21,16 +21,17 @@
             font-size: 1.5rem;
             margin: 20px;
             white-space: pre-line;
-            width: 45%; /* 각각의 폭을 설정 */
+            width: 45%;
         }
-        #randomButton{
+        #randomButton {
             padding: 20px 40px;
-            font-size:1.5rem;
-            cursor:pointer;
-            border:none;
-            border-radius:5px;
-            background-color:#4CAF50;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
             color: white;
+        }
     </style>
 </head>
 <body>
@@ -52,13 +53,13 @@
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
                 if (i < 10) {
-                    leftResults += `${i+1}차: ${randomDirection}베기\n`; // 왼쪽
+                    leftResults += `${i+1}차: ${randomDirection}베기\n`;
                 } else {
-                    rightResults += `${i+1}차: ${randomDirectio}베기\n`; // 오른쪽
+                    rightResults += `${i+1}차: ${randomDirection}베기\n`;
                 }
             }
-            leftDirectionsDisplay.textContent = leftResults.trim(); // 왼쪽 결과
-            rightDirectionsDisplay.textContent = rightResults.trim(); // 오른쪽 결과
+            leftDirectionsDisplay.textContent = leftResults.trim();
+            rightDirectionsDisplay.textContent = rightResults.trim();
         });
     </script>
 </body>
