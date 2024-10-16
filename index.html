@@ -15,7 +15,7 @@
         #directions {
             font-size: 1.5rem;
             margin: 20px;
-            white-space: pre-line; /* 줄 바꿈을 위해 추가 */
+            white-space: pre-line;
         }
     </style>
 </head>
@@ -32,7 +32,10 @@
             let results = '';
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
-                results += randomDirection + '\n'; // 줄 바꿈 추가
+                results += `${randomDirection} ~차 시기\n`; // 문자 추가
+                if ((i + 1) % 10 === 0) {
+                    results += '\n'; // 10개마다 줄 바꿈 추가
+                }
             }
             directionsDisplay.textContent = results.trim(); // 마지막 줄 바꿈 제거
         });
