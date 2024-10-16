@@ -12,24 +12,29 @@
             justify-content: center;
             height: 100vh;
         }
-        #direction {
-            font-size: 2rem;
+        #directions {
+            font-size: 1.5rem;
             margin: 20px;
+            white-space: pre-line; /* 줄 바꿈을 위해 추가 */
         }
     </style>
 </head>
 <body>
-    <div id="direction">방향이 여기에 표시됩니다.</div>
+    <div id="directions">방향이 여기에 표시됩니다.</div>
     <button id="randomButton">랜덤 방향</button>
 
     <script>
         const directions = ['좌', '우'];
-        const directionDisplay = document.getElementById('direction');
+        const directionsDisplay = document.getElementById('directions');
         const button = document.getElementById('randomButton');
 
         button.addEventListener('click', () => {
-            const randomDirection = directions[Math.floor(Math.random() * directions.length)];
-            directionDisplay.textContent = randomDirection;
+            let results = '';
+            for (let i = 0; i < 20; i++) {
+                const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+                results += randomDirection + '\n'; // 줄 바꿈 추가
+            }
+            directionsDisplay.textContent = results.trim(); // 마지막 줄 바꿈 제거
         });
     </script>
 </body>
