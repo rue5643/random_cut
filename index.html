@@ -44,9 +44,9 @@
             for (let i = 0; i < 20; i++) {
                 const randomDirection = directions[Math.floor(Math.random() * directions.length)];
                 if (i < 10) {
-                    leftResults += `${randomDirection} ~차 시기\n`; // 왼쪽
+                    leftResults += `${i}차: ${randomDirection}\n`; // 왼쪽
                 } else {
-                    rightResults += `${randomDirection} ~차 시기\n`; // 오른쪽
+                    rightResults += `${i}차: ${randomDirection}\n`; // 오른쪽
                 }
             }
             leftDirectionsDisplay.textContent = leftResults.trim(); // 왼쪽 결과
